@@ -1,0 +1,15 @@
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp_MultiUser-Staggs.exe
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp_MultiUser-Staggs.deps.json
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp_MultiUser-Staggs.runtimeconfig.json
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp_MultiUser-Staggs.dll
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp_MultiUser-Staggs.pdb
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.csproj.AssemblyReference.cache
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.GeneratedMSBuildEditorConfig.editorconfig
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.AssemblyInfoInputs.cache
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.AssemblyInfo.cs
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.csproj.CoreCompileInputs.cache
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.dll
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\refint\BankApp_MultiUser-Staggs.dll
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.pdb
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp_MultiUser-Staggs.genruntimeconfig.cache
+F:\School\Csh\BankApp_MultiUser-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\ref\BankApp_MultiUser-Staggs.dll

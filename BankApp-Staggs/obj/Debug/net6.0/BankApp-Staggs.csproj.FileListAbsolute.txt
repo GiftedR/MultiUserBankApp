@@ -1,0 +1,15 @@
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp-Staggs.exe
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp-Staggs.deps.json
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp-Staggs.runtimeconfig.json
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp-Staggs.dll
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\bin\Debug\net6.0\BankApp-Staggs.pdb
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.csproj.AssemblyReference.cache
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.GeneratedMSBuildEditorConfig.editorconfig
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.AssemblyInfoInputs.cache
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.AssemblyInfo.cs
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.csproj.CoreCompileInputs.cache
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.dll
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\refint\BankApp-Staggs.dll
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.pdb
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\BankApp-Staggs.genruntimeconfig.cache
+F:\School\Csh\BankApp-Staggs_Solution\BankApp-Staggs\obj\Debug\net6.0\ref\BankApp-Staggs.dll
