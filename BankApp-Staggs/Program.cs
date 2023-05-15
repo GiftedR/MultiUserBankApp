@@ -6,20 +6,19 @@ namespace BankApp_Staggs
 {
     //Name: Colton Staggs
     //IT112
-    //Notes: Originally had full words for the commands, reccomended to take it down to just letters
-    internal class ATM
+    //Notes: Put usernames and passwords into single arrays for ease of personal readability and adding new credentials in the future.
+    internal class Program
     {
         static void Main(string[] args)
         {
             bool active = true;
             bool validLogin = false;
-            string[] credentials = {"[USERNAME]","[PASSWORD]"};
-            string[] usernames = {"jlennon", "pmccartney", "gharrison", "rstarr"};
-            string[] passwords = {"johnny","pauly","georgy","ringoy"};
+            string[] userInput = {"[USERNAME]","[PASSWORD]"};
+            string[] savedLogins = {"jlennon","johnny","pmccartney","pauly","gharrison","georgy","rstarr","ringoy"};
+            Bank mainBank = new Bank();
             getLogin();
-            Bank mainBank = new Bank(10000.00);
-            consClear();
-            do
+            if(active) { consClear(); }
+            while (active == true)
             {
                 Console.WriteLine("Enter letter for corresponding action, or type h or 5 for a list of actions.");
                 string input = Console.ReadLine().ToLower();
@@ -39,7 +38,7 @@ namespace BankApp_Staggs
                             consError("Make sure number is formatted properly!");
                             break;
                         }
-                        mainBank.deposit(depositAmount, credentials[0]);
+                        mainBank.deposit(depositAmount, userInput[0]);
                         dispBal(" New");
                         break;
                     case "e" or "4":
@@ -48,15 +47,15 @@ namespace BankApp_Staggs
                     case "h" or "5":
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("========================");
-                        Console.WriteLine("b or 1 - returns your balance");
-                        Console.WriteLine("c or 2 - clears the output");
-                        Console.WriteLine("d or 3 - deposits an amount");
-                        Console.WriteLine("e or 4 - closes the program");
-                        Console.WriteLine("h or 5 - lists available commands");
-                        Console.WriteLine("l or 6 - Logs out the current user");
-                        if (mainBank.Balance > 0 && mainBank.getBalance(credentials[0]) > 0)
+                        Console.WriteLine("B or 1 - returns your balance");
+                        Console.WriteLine("C or 2 - clears the output");
+                        Console.WriteLine("D or 3 - deposits an amount");
+                        Console.WriteLine("E or 4 - closes the program");
+                        Console.WriteLine("H or 5 - lists available commands");
+                        Console.WriteLine("L or 6 - Logs out the current user");
+                        if (mainBank.BankBalance > 0 && mainBank.getBalance(userInput[0]) > 0)
                         {
-                            Console.WriteLine("w or 7 - withdraws an amount");
+                            Console.WriteLine("W or 7 - withdraws an amount");
                         }
                         Console.WriteLine("========================");
                         break;
@@ -65,24 +64,24 @@ namespace BankApp_Staggs
                         consClear();
                         break;
                     case "w" or "7":
-                        if (mainBank.Balance <= 0)
+                        if (mainBank.BankBalance <= 0)
                         {
                             consError("The bank does not have the balance to support this withdraw.");
                             break;
                         }
-                        if (mainBank.getBalance(credentials[0]) <= 0)
+                        if (mainBank.getBalance(userInput[0]) <= 0)
                         {
                             consError("You have no balance to withdraw.");
                             break;
                         }
                         double withdrawAmount;
-                        Console.WriteLine("Please write the amound you would like to withdraw. Currently the system is limited to $500");
+                        Console.WriteLine("Please write the amound you would like to withdraw. Currently the system is limited to: " + mainBank.withdrawLimit.ToString("c"));
                         if (double.TryParse(Console.ReadLine(), out withdrawAmount))
                         {
-                            mainBank.withDraw(withdrawAmount, credentials[0]);
-                            if(withdrawAmount > 500)
+                            mainBank.withDraw(withdrawAmount, userInput[0]);
+                            if(withdrawAmount > mainBank.withdrawLimit)
                             {
-                                Console.WriteLine("The system limited your withdraw to $500.");
+                                Console.WriteLine("The system limited your withdraw to: " + mainBank.withdrawLimit.ToString("c"));
                             }
                         }
                         else
@@ -96,23 +95,39 @@ namespace BankApp_Staggs
                         consError("Unknown action: " + input);
                         break;
                 }
-            } while (active == true);
+            };
             bool getLogin()
             {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("The banks current balance is: " + mainBank.BankBalance.ToString("c"));
+                Console.ForegroundColor = ConsoleColor.Gray;
                 do
                 {
-                    Console.Clear();
-                    Console.WriteLine("You are not Logged in.");
-                    Console.WriteLine("Enter your Username");
-                    credentials[0] = Console.ReadLine();
-                    Console.WriteLine("Enter your Password");
-                    credentials[1] = Console.ReadLine();
-                    for (int i = 0; i < usernames.Length; i++)
+                    Console.WriteLine("Hello User, \nPlease enter 1 or L to login. \nPlease enter 2 or E to exit.");
+                    switch (Console.ReadLine().ToLower())
                     {
-                        if (credentials[0] == usernames[i] && credentials[1] == passwords[i])
-                        {
-                            validLogin = true;
-                        }
+                        case "1" or "l":
+                            Console.WriteLine("Enter your Username");
+                            userInput[0] = Console.ReadLine();
+                            Console.WriteLine("Enter your Password");
+                            userInput[1] = Console.ReadLine();
+                            for (int i = 0; i < savedLogins.Length; i++)
+                            {
+                                if (userInput[0] == savedLogins[i] && userInput[1] == savedLogins[i + 1])
+                                {
+                                    validLogin = true;
+                                }
+                            }
+                            if(validLogin == false)
+                            {
+                                consError("Invalid Username or Password!");
+                            }
+                            break;
+                            case "2" or "e":
+                                active = false;
+                                validLogin = true;
+                                break;
                     }
                 } while (!validLogin);
                 return true;
@@ -120,7 +135,7 @@ namespace BankApp_Staggs
             void dispBal(string type)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Your" + type + " Balance is: " + mainBank.getBalance(credentials[0]).ToString("c"));
+                Console.WriteLine("Your" + type + " Balance is: " + mainBank.getBalance(userInput[0]).ToString("c"));
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
             void consError(string message)
@@ -132,7 +147,7 @@ namespace BankApp_Staggs
             void consClear()
             {
                 Console.Clear();
-                Console.WriteLine("Welcome, " + credentials[0]);
+                Console.WriteLine("Welcome, " + userInput[0]);
                 dispBal(" Current");
             }
         }

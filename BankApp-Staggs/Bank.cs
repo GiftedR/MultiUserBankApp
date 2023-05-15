@@ -10,10 +10,8 @@ namespace BankApp_Staggs
     internal class Bank
     {
         private double BankBal = 10000;
-        private string[] userBal = {"jlennon","1250","pmccartney","2500","gharrison","3000","rstarr","1000"};
-        public Bank(double startBal) {
-            BankBal = startBal;
-        }
+        private string[] userBal = { "jlennon", "1250", "pmccartney", "2500", "gharrison", "3000", "rstarr", "1000" };
+        public Bank() { }
         private int balIndex(string username)
         {
             for (int i = 0; i < userBal.Length; i++)
@@ -27,9 +25,9 @@ namespace BankApp_Staggs
         }
         public bool withDraw(double amount, string username)
         {
-            if (amount > 500)
+            if (amount > withdrawLimit)
             {
-                amount = 500;
+                amount = withdrawLimit;
             }
             BankBal -= amount;
             double parseBal;
@@ -50,7 +48,7 @@ namespace BankApp_Staggs
             BankBal += amount;
             double parseBal;
             double.TryParse(userBal[balIndex(username)], out parseBal);
-            if(parseBal < 0)
+            if (parseBal < 0)
             {
                 parseBal = 0;
             }
@@ -71,9 +69,11 @@ namespace BankApp_Staggs
             }
             return parseBalance;
         }
-        public double Balance {
+        public double BankBalance {
             get { return BankBal; }
-            set { }
+        }
+        public double withdrawLimit {
+            get { return 500; }
         }
     }
 }
